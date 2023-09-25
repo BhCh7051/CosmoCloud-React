@@ -1,6 +1,6 @@
-import React from 'react';
-import { CloseOutlined } from '@ant-design/icons';
-import { Button, Card, Form, Input, Space, Typography } from 'antd';
+import React from "react";
+import { CloseOutlined } from "@ant-design/icons";
+import { Button, Card, Form, Input, Space, Typography } from "antd";
 const App = () => {
   const [form] = Form.useForm();
   return (
@@ -25,9 +25,9 @@ const App = () => {
         {(fields, { add, remove }) => (
           <div
             style={{
-              display: 'flex',
+              display: "flex",
               rowGap: 16,
-              flexDirection: 'column',
+              flexDirection: "column",
             }}
           >
             {fields.map((field) => (
@@ -43,27 +43,27 @@ const App = () => {
                   />
                 }
               >
-                <Form.Item label="Name" name={[field.name, 'name']}>
+                <Form.Item label="Name" name={[field.name, "name"]}>
                   <Input />
                 </Form.Item>
 
                 {/* Nest Form.List */}
                 <Form.Item label="List">
-                  <Form.List name={[field.name, 'list']}>
+                  <Form.List name={[field.name, "list"]}>
                     {(subFields, subOpt) => (
                       <div
                         style={{
-                          display: 'flex',
-                          flexDirection: 'column',
+                          display: "flex",
+                          flexDirection: "column",
                           rowGap: 16,
                         }}
                       >
                         {subFields.map((subField) => (
                           <Space key={subField.key}>
-                            <Form.Item noStyle name={[subField.name, 'first']}>
+                            <Form.Item noStyle name={[subField.name, "first"]}>
                               <Input placeholder="first" />
                             </Form.Item>
-                            <Form.Item noStyle name={[subField.name, 'second']}>
+                            <Form.Item noStyle name={[subField.name, "second"]}>
                               <Input placeholder="second" />
                             </Form.Item>
                             <CloseOutlined
@@ -73,8 +73,12 @@ const App = () => {
                             />
                           </Space>
                         ))}
-                        <Button type="dashed" onClick={() => subOpt.add()} block>
-                          + Add Sub Item
+                        <Button
+                          type="dashed"
+                          onClick={() => subOpt.add()}
+                          block
+                        >
+                          + Add Item
                         </Button>
                       </div>
                     )}
